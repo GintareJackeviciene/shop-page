@@ -74,7 +74,7 @@ module.exports = {
     let sqlArguments = [id];
 
     let sql = 'SELECT `orders`.*, ' +
-      '`customers`.`firstname` as `customer_firstname`, `customers`.`lastname` as `customer_lastname`, `customers`.`email` as `customer_email`, ' +
+      '`customers`.`vardas` as `customer_vardas`, `customers`.`pavardė` as `customer_pavardė`, `customers`.`email` as `customer_email`, ' +
       '`items`.`title` as `item_title`, `items`.`img_url` as `item_img` ' +
       'FROM `orders` ' +
       'JOIN `customers` ON `customers`.`id` = `orders`.`customer_id` ' +
@@ -104,7 +104,7 @@ module.exports = {
   getAll: async (req, res, next) => {
     const tokenData = parseJWTToken(req.header('Authorization'));
 
-    let sql = 'SELECT `orders`.`id`, `orders`.`total`, `orders`.`created_at`, CONCAT(`customers`.`firstname`, " ", `customers`.`lastname`) as `customer`  ' +
+    let sql = 'SELECT `orders`.`id`, `orders`.`total`, `orders`.`created_at`, CONCAT(`customers`.`vardas`, " ", `customers`.`pavardė`) as `customer`  ' +
       'FROM `orders` ' +
       'JOIN `customers` ON `customers`.`id` = `orders`.`customer_id`';
 
