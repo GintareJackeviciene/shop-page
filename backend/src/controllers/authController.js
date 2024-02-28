@@ -3,12 +3,13 @@ const { makeSqlQuery, makeJWTToken } = require('../helpers');
 const APIError = require('../apiError/ApiError');
 
 const login = async (req, res, next) => {
-  const { email, password } = req.body;
+  const { email, slaptazodis } = req.body;
 
   const sql = 'SELECT * FROM customers WHERE email=?';
   const [rowsArr, error] = await makeSqlQuery(sql, [email]);
 
   if (error) {
+    console.log('login error ===');
     return next(error);
   }
 
@@ -18,31 +19,30 @@ const login = async (req, res, next) => {
 
   const foundUserInDB = rowsArr[0];
 
-  const passHash = foundUserInDB.password;
+  const passHash = foundUserInDB.slaptazodis;
 
-  if (!bcrypt.compareSync(password, passHash)) {
+  if (!bcrypt.compareSync(slaptazodis, passHash)) {
     return next(new APIError('pass or email not match (pass no match)', 401));
   }
 
   const token = makeJWTToken({ email: foundUserInDB.email, userId: foundUserInDB.id, scope: foundUserInDB.scope });
   res.json({
-    message: `Welcome ${foundUserInDB.firstname} ${foundUserInDB.lastname}!`,
+    message: `Sveiki ${foundUserInDB.vardas} ${foundUserInDB.pavardė}!`,
     token,
   });
 };
 
 const register = async (req, res, next) => {
-  const {
-    firstname, lastname, email, password,
-  } = req.body;
+  const {vardas, pavardė, email, slaptazodis} = req.body;
 
   const salt = process.env.SALT || 5;
-  const passwordHash = bcrypt.hashSync(password, +salt);
+  const passwordHash = bcrypt.hashSync(slaptazodis, +salt);
 
-  const sql = 'INSERT INTO `customers` (`firstname`, `lastname`, `email`, `password`) VALUES (?, ?, ? ,?)';
-  const [resObj, error] = await makeSqlQuery(sql, [firstname, lastname, email, passwordHash]);
+  const sql = 'INSERT INTO `customers` (`vardas`, `pavardė`, `email`, `slaptazodis`) VALUES (?, ?, ? ,?)';
+  const [resObj, error] = await makeSqlQuery(sql, [vardas, pavardė, email, passwordHash]);
 
   if (error) {
+    console.log('register error ===');
     return next(error);
   }
 

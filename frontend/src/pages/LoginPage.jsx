@@ -14,11 +14,11 @@ export default function LoginPage() {
     const formik = useFormik({
         initialValues: {
             email: 'gintare@bit.lt',
-            slaptažodis: '123456',
+            slaptazodis: '123456',
         },
         validationSchema: Yup.object({
             email: Yup.string().email().min(3).required(),
-            slaptažodis: Yup.string().min(5).max(30).required(),
+            slaptazodis: Yup.string().min(5).max(30).required(),
         }),
         onSubmit: (values) => {
             sendAxiosData(values);
@@ -53,7 +53,7 @@ export default function LoginPage() {
                 </div>
                 <div className='mb-4'>
                     <SmartInput
-                        id='slaptažodis'
+                        id='slaptazodis'
                         formik={formik}
                         type='password'
                         placeholder='Įveskite slaptažodį'

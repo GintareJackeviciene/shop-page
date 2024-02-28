@@ -15,14 +15,14 @@ export default function RegisterPage() {
             vardas: '',
             pavardė: '',
             email: '',
-            slaptažodis: '',
+            slaptazodis: '',
             
         },
         validationSchema: Yup.object({
             vardas: Yup.string().min(3).required('Privalomas vardas'),
             pavardė: Yup.string().min(3).required('Privaloma pavardė'),
             email: Yup.string().email().min(3).required('Privalomas el. paštas'),
-            slaptažodis: Yup.string().min(5).max(30).required('Įveskite slaptažodį'),
+            slaptazodis: Yup.string().min(5).max(30).required('Įveskite slaptažodį'),
             
         }),
         onSubmit: (values) => {
@@ -72,7 +72,7 @@ export default function RegisterPage() {
                 </div>
                 <div className='mb-4'>
                     <SmartInput
-                        id='slaptažodis'
+                        id='slaptazodis'
                         formik={formik}
                         type='password'
                         placeholder='Įveskite slaptažodį'
