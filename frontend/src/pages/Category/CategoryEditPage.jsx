@@ -34,7 +34,7 @@ export default function CategoryEditPage() {
                 headers: {'Authorization': token}
             })
             .then((response) => {
-                toast.success(response?.message || 'Category has been successfully updated!');
+                // toast.success(response?.message || 'Category has been successfully updated!');
                 navigate('/categories', {replace: true});
             })
             .catch((error) => {

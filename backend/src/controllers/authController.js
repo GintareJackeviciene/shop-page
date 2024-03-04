@@ -3,7 +3,7 @@ const { makeSqlQuery, makeJWTToken } = require('../helpers');
 const APIError = require('../apiError/ApiError');
 
 const login = async (req, res, next) => {
-  const { email, slaptazodis } = req.body;
+  const { email, slaptažodis } = req.body;
 
   const sql = 'SELECT * FROM customers WHERE email=?';
   const [rowsArr, error] = await makeSqlQuery(sql, [email]);
@@ -19,26 +19,26 @@ const login = async (req, res, next) => {
 
   const foundUserInDB = rowsArr[0];
 
-  const passHash = foundUserInDB.slaptazodis;
+  const passHash = foundUserInDB.slaptažodis;
 
-  if (!bcrypt.compareSync(slaptazodis, passHash)) {
+  if (!bcrypt.compareSync(slaptažodis, passHash)) {
     return next(new APIError('pass or email not match (pass no match)', 401));
   }
 
   const token = makeJWTToken({ email: foundUserInDB.email, userId: foundUserInDB.id, scope: foundUserInDB.scope });
   res.json({
-    message: `Sveiki ${foundUserInDB.vardas} ${foundUserInDB.pavardė}!`,
+    message: `Sveiki ${foundUserInDB.vardas}!`,
     token,
   });
 };
 
 const register = async (req, res, next) => {
-  const {vardas, pavardė, email, slaptazodis} = req.body;
+  const {vardas, pavardė, email, slaptažodis} = req.body;
 
   const salt = process.env.SALT || 5;
-  const passwordHash = bcrypt.hashSync(slaptazodis, +salt);
+  const passwordHash = bcrypt.hashSync(slaptažodis, +salt);
 
-  const sql = 'INSERT INTO `customers` (`vardas`, `pavardė`, `email`, `slaptazodis`) VALUES (?, ?, ? ,?)';
+  const sql = 'INSERT INTO `customers` (`vardas`, `pavardė`, `email`, `slaptažodis`) VALUES (?, ?, ? ,?)';
   const [resObj, error] = await makeSqlQuery(sql, [vardas, pavardė, email, passwordHash]);
 
   if (error) {

@@ -29,3 +29,24 @@ th {
 td {
   text-align: center;
 }
+.login{
+
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+ max-width: 400px;
+ margin: 0 auto;
+ padding: 20px;
+}
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+.register{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}

@@ -1,6 +1,6 @@
 export default function HomePage() {
   return (
-    <div className=' bg-gradient-to-b from-gray-300 to-gray-500 rounded-md'>
+    <div className=' bg-gradient-to-b from-gray-300 to-gray-500 mt-20 rounded-md'>
       <h1 className=' text-3xl text-center pt-10 mb-5'>Technikos ir įrankių nuoma </h1>
     
       <p className=" container pb-10 text-justify">

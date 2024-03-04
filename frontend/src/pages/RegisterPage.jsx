@@ -15,14 +15,14 @@ export default function RegisterPage() {
             vardas: '',
             pavardė: '',
             email: '',
-            slaptazodis: '',
+            slaptažodis: '',
             
         },
         validationSchema: Yup.object({
-            vardas: Yup.string().min(3).required('Privalomas vardas'),
-            pavardė: Yup.string().min(3).required('Privaloma pavardė'),
+            vardas: Yup.string().min(3).required('Privalomas laukas'),
+            pavardė: Yup.string().min(3).required('Privalomas laukas'),
             email: Yup.string().email().min(3).required('Privalomas el. paštas'),
-            slaptazodis: Yup.string().min(5).max(30).required('Įveskite slaptažodį'),
+            slaptažodis: Yup.string().min(5).max(30).required('Įveskite slaptažodį'),
             
         }),
         onSubmit: (values) => {
@@ -43,8 +43,8 @@ export default function RegisterPage() {
     }
 
     return (
-        <div className='container mx-auto'>
-            <h1 className='text-3xl text-center my-10'>Registracijos puslapis</h1>
+        <div className='container  bg-gray-100 register'>
+            <h1 className='text-3xl text-center '>Registracija</h1>
             <form onSubmit={formik.handleSubmit} className='mt-4' noValidate>
                 <div className='mb-4'>
                     <SmartInput
@@ -72,7 +72,7 @@ export default function RegisterPage() {
                 </div>
                 <div className='mb-4'>
                     <SmartInput
-                        id='slaptazodis'
+                        id='slaptažodis'
                         formik={formik}
                         type='password'
                         placeholder='Įveskite slaptažodį'
@@ -80,7 +80,7 @@ export default function RegisterPage() {
                 </div>
                
                 <button
-                    className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'
+                    className='w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4'
                     type='submit'>
                     Registruotis
                 </button>

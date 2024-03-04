@@ -20,7 +20,7 @@ export default function OrderListPage() {
                 headers: {'Authorization': token}
             })
             .then((response) => {
-                toast.success(response?.message || `Order ID: ${orderId} successfully deleted!`);
+                // toast.success(response?.message );
                 const list = orders.filter(order => order.id !== orderId);
                 setOrders(list);
             })
@@ -53,7 +53,7 @@ export default function OrderListPage() {
                 <table className='min-w-full table-auto'>
                     <thead className='bg-gray-500 text-white'>
                     <tr>
-                        <th className='px-4 py-2'>ID</th>
+                        {/* <th className='px-4 py-2'>ID</th> */}
                         <th className='px-4 py-2'>Pirkėjas</th>
                         <th className='px-4 py-2'>Suma</th>
                         <th className='px-4 py-2'>Sukūrimo data</th>
@@ -64,7 +64,7 @@ export default function OrderListPage() {
                     {filteredOrders.map((order) => (
 
                             <tr key={order.id} className='bg-gray-100'>
-                                <td className='border px-4 py-2'>{order.id}</td>
+                                {/* <td className='border px-4 py-2'>{order.id}</td> */}
                                 <td className='border px-4 py-2'>{order.customer}</td>
                                 <td className='border px-4 py-2'>{order.total}</td>
                                 <td className='border px-4 py-2'>{(new Date(order.created_at)).toLocaleString('lt-LT', dateTimeOptions)}</td>

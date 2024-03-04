@@ -12,8 +12,8 @@ function SmartInput({ id, formik, type = 'text', readOnly = false, placeholder =
   );
 
   return (
-    <div className='mt-5'>
-      <label className='w-full mt-5'>
+    <div className='mt-2'>
+      <label className=''>
           {type !== 'hidden' ? <span className='block'>{title ?? id.charAt(0).toUpperCase() + id.slice(1)}</span> : ''}
 
           {type === 'textarea' ? (

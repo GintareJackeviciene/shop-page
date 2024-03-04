@@ -17,7 +17,7 @@ export default function ItemListPage() {
                 headers: {'Authorization': token}
             })
             .then((response) => {
-                toast.success(response?.message || `Item ID: ${itemId} successfully deleted!`);
+                // toast.success(response?.message );
                 const list = items.filter(item => item.id !== itemId);
                 setItems(list);
             })
@@ -54,14 +54,14 @@ export default function ItemListPage() {
                     type="text"
                     value={filterValue}
                     onChange={handleFilterChange}
-                    placeholder="Search Item"
+                    placeholder="Prekės paieška"
                 />
             </div>
             <div className='mt-5'>
                 <table className='min-w-full table-auto'>
                     <thead className='bg-gray-500 text-white'>
                     <tr>
-                        <th className='px-4 py-2'>ID</th>
+                        {/* <th className='px-4 py-2'>ID</th> */}
                         <th className='px-4 py-2'>Pavadinimas</th>
                         <th className='px-4 py-2'>Kategorija</th>
                         <th className='px-4 py-2'>Kaina</th>
@@ -73,21 +73,21 @@ export default function ItemListPage() {
                     <tbody>
                     {filteredItems.map((item) => (
                             <tr key={item.id} className='bg-gray-100'>
-                                <td className='border px-4 py-2'>{item.id}</td>
-                                <td className='border px-4 py-2'>{item.title}</td>
-                                <td className='border px-4 py-2'>{item.category_name}</td>
+                                {/* <td className='border px-4 py-2'>{item.id}</td> */}
+                                <td className='border px-4 py-4'>{item.title}</td>
+                                <td className='border px-4 py-4'>{item.category_name}</td>
                                 <td className='border px-4 py-2'>{item.price}</td>
                                 <td className='border px-4 py-2'>{item.stock}</td>
                                 <td className='border px-4 py-2'>{item.rating}</td>
                                 <td className='border px-4 py-2'>
                                     <Link
                                         to={`/items/edit/${item.id}`}
-                                        className='bg-gray-400 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded'
+                                        className='bg-gray-400 hover:bg-gray-500 text-white font-bold py-2 px-2 rounded'
                                     >
                                         Redaguoti
                                     </Link>
                                     <button
-                                        className='bg-red-500 hover:bg-red-400 text-white font-bold ml-2 py-2 px-4 rounded'
+                                        className='bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-2 rounded'
                                         onClick={() => deleteItem(item.id)}
                                     >
                                         Ištrinti

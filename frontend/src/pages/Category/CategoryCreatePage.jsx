@@ -30,7 +30,7 @@ export default function CategoryCreatePage() {
                 headers: {'Authorization': token}
             })
             .then((response) => {
-                toast.success(response?.message || 'Category has been successfully created!');
+               
                 navigate('/categories', {replace: true});
             })
             .catch((error) => {

@@ -21,7 +21,7 @@ export default function OrderDetailPage() {
             <div className='border p-4'>
                 <h2 className='text-xl text-center my-3 font-bold uppercase'>Pirkėjo informacija</h2>
                 <p><span
-                    className='font-bold'>Pirkėjas:</span> {order.customer_firstname + ' ' + order.customer_lastname}
+                    className='font-bold'>Pirkėjas:</span> {order.customer_vardas + ' ' + order.customer_pavardė}
                 </p>
                 <p><span className='font-bold'>El. paštas: </span>{order.customer_email}</p>
             </div>

@@ -59,7 +59,7 @@ module.exports = {
 
         res.status(200).json({
             id: itemId,
-            message: `Item with id: ${itemId} rating updated successfully`
+           
         });
     },
     update: async (req, res, next) => {
@@ -92,7 +92,7 @@ module.exports = {
 
         res.status(200).json({
             id: itemId,
-            message: `Item with id: ${itemId} updated successfully`
+           
         });
 
     },
@@ -124,7 +124,7 @@ module.exports = {
 
         res.status(201).json({
             id: resObj.insertId,
-            message: 'Item created successfully!',
+          
         });
     },
     delete: async (req, res, next) => {
@@ -141,7 +141,7 @@ module.exports = {
         }
 
         res.status(200).json({
-            message: 'Item deleted successfully!',
+           
         });
     },
 };

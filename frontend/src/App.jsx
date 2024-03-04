@@ -17,6 +17,7 @@ import PrivateRoute from './PrivateRoute/PrivateRoute';
 import OrderListPage from './pages/Order/OrderListPage';
 import OrderDetailPage from './pages/Order/OrderDetailPage';
 import Kontaktai from './pages/Kontaktai';
+import Pagrindinis from './pages/Pagrindinis';
 
 export default function App() {
     return (
@@ -25,7 +26,7 @@ export default function App() {
             <Header />
             <Routes>
                 <Route path='/' element={<HomePage />} />
-                <Route path='/shop' element={<ShopPage />} />
+                <Route path='/shop' element={<Pagrindinis />} />
                 <Route path='/login' element={<LoginPage />} />
                 <Route path='/register' element={<RegisterPage />} />
                 <Route path='/kontaktai' element={<Kontaktai />} />

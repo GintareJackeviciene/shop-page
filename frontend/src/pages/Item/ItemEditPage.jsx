@@ -81,7 +81,7 @@ export default function ItemCreatePage() {
                 }
             })
             .then((response) => {
-                toast.success(response?.message || 'Item has been successfully updated!');
+                // toast.success(response?.message || 'Item has been successfully updated!');
                 navigate('/items', {replace: true});
             })
             .catch((error) => {

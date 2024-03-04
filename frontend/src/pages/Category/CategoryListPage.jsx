@@ -18,7 +18,7 @@ export default function CategoryListPage() {
                 headers: { 'Authorization': token }
             })
             .then((response) => {
-                toast.success(response?.message || `Category ID: ${categoryId} successfully deleted!`);
+                // toast.success(response?.message || `Category ID: ${categoryId} successfully deleted!`);
                 const list = categories.filter(category => category.id !== categoryId);
                 setCategories(list);
             })
@@ -54,7 +54,7 @@ export default function CategoryListPage() {
                     type="text"
                     value={filterValue}
                     onChange={handleFilterChange}
-                    placeholder="Search Category"
+                    placeholder="Kategorijos paieška"
                 />
             </div>
             <div className='mt-5'>
@@ -62,7 +62,7 @@ export default function CategoryListPage() {
                 <table className='min-w-full table-auto'>
                     <thead className='bg-gray-500 text-white'>
                         <tr>
-                            <th className='px-4 py-2'>ID</th>
+                            {/* <th className='px-4 py-2'>ID</th> */}
                             <th className='px-4 py-2'>Pavadinimas</th>
                             <th className='px-4 py-2'></th>
                         </tr>
@@ -70,7 +70,7 @@ export default function CategoryListPage() {
                     <tbody>
                         {filteredCategories.map((category) => (
                             <tr key={category.id} className='bg-gray-100'>
-                                <td className='border px-4 py-2'>{category.id}</td>
+                                {/* <td className='border px-4 py-2'>{category.id}</td> */}
                                 <td className='border px-4 py-2'>{category.name}</td>
                                 <td className='border px-4 py-2'>
                                     <Link

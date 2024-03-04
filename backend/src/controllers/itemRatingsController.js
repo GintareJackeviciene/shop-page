@@ -18,7 +18,7 @@ module.exports = {
 
         res.status(201).json({
             id: responseObject.insertId,
-            message: 'Item rating successfully added!'
+            // message: 'Item rating successfully added!'
         });
     },
     getByCustomer: async (req, res, next) => {

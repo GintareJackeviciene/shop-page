@@ -64,7 +64,7 @@ module.exports = {
 
     res.status(201).json({
       id: responseObject.insertId,
-      message: 'Order created successfully',
+      
     });
   },
   getSingle: async (req, res, next) => {
@@ -112,7 +112,7 @@ module.exports = {
     if (tokenData.scope && tokenData.scope !== 'admin') {
       sql += ' WHERE `orders`.`customer_id` = ?';
       sqlArguments = [
-        tokenData.userId
+        tokenData.userId,
       ]
     }
 
@@ -167,7 +167,7 @@ module.exports = {
 
     res.status(200).json({
       id: id,
-      message: `Order with id: ${id} deleted successfully`
+     
     });
   },
 

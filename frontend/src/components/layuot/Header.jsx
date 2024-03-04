@@ -41,19 +41,19 @@ export default function Header() {
                 {isUserAdmin && (
                     <>
                       <NavLink className={'px-4 py-2 hover:bg-slate-500 hover:text-indigo-500'} to={'/items'}>
-                        Items
+                        Prekės
                       </NavLink>
                       <NavLink className={'px-4 py-2 hover:bg-slate-500 hover:text-indigo-500'} to={'/categories'}>
-                        Categories
+                        Kategorijos
                       </NavLink>
                     </>
 
                 )}
-                <NavLink className={'px-4 py-2 hover:bg-slate-500 hover:text-indigo-500'} to={'/orders'}>Orders</NavLink>
+                <NavLink className={'px-4 py-2 hover:bg-slate-500 hover:text-indigo-500'} to={'/orders'}>Užsakymai</NavLink>
                 <button
                     onClick={handleLogout}
                     className={'px-4 py-2 hover:bg-slate-500 hover:text-indigo-500'}>
-                  Logout
+                  Atsijungti
                 </button>
               </>
           )}

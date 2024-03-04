@@ -70,7 +70,7 @@ export default function ItemCreatePage() {
                 }
             })
             .then((response) => {
-                toast.success(response?.message || 'Item has been successfully created!');
+                // toast.success(response?.message || 'Item has been successfully created!');
                 navigate('/items', {replace: true});
             })
             .catch((error) => {

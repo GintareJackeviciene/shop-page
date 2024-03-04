@@ -48,7 +48,7 @@ module.exports = {
 
     res.status(200).json({
       id,
-      message: `Category with id: ${id} updated successfully`,
+      // message: `Category with id: ${id} updated successfully`,
     });
   },
   create: async (req, res, next) => {
@@ -68,7 +68,7 @@ module.exports = {
 
     res.status(201).json({
       id: responseObject.insertId,
-      message: 'Category created successfully',
+      // message: 'Category created successfully',
     });
   },
   delete: async (req, res, next) => {
@@ -87,7 +87,7 @@ module.exports = {
     }
 
     res.status(200).json({
-      message: 'Category deleted successfully!',
+      // message: 'Category deleted successfully!',
     });
   },
 };

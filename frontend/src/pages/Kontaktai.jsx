@@ -1,7 +1,7 @@
 export default function Kontaktai() {
     return (
-        <div className='bg-gradient-to-b from-gray-300 to-gray-500 rounded-md'>
-            <h1 className='text-3xl text-center pt-10 mb-5'>Kontaktai ir darbo laikas</h1>
+        <div className='bg-gradient-to-b from-gray-300 to-gray-500 mt-20 rounded-md'>
+            <h1 className='text-3xl text-center pt-10 mb-10'>Kontaktai ir darbo laikas</h1>
             <hr />
             <h4 className="text-center mt-5 mb-5">
 

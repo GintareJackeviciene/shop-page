@@ -33,8 +33,8 @@ export default function ShopPage() {
           headers: { 'Authorization': token }
         })
       .then((response) => {
-        toast.success(response?.message || 'Item rating was successfully added!');
-        //setItemsArr(itemsArr.map(item => item.id === id ? {...item, rating} : item))
+        // toast.success(response?.message || 'Item rating was successfully added!');
+        setItemsArr(itemsArr.map(item => item.id === id ? {...item, rating} : item))
       })
       .catch((error) => {
         toast.error(error.response.data.error);
@@ -60,20 +60,18 @@ export default function ShopPage() {
   }, []);
 
   return (
-    <div className='container bg-slate-300'>
-      <h1 className='text-3xl '>ShopPage</h1>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum voluptatibus, praesentium
-        libero repellat officiis corporis esse iste totam reiciendis voluptatem!
-      </p>
+ 
+    <div className='container '>
+    
+     
 
       <div className='grid grid-cols-3 gap-4 p-3'>
         {itemsArr.map((item) => (
           <div key={item.id}>
             <img src={'http://localhost:3000/' + item.img_url} alt={item.title} />
-            <h2><span className='font-bold'>pavadinimas:</span> {item.title}</h2>
-            <p><span className='font-bold'>aprasymas:</span> {item.description}</p>
-            <p><span className='font-bold'>kaina: </span>{item.price}</p>
+            <h2><span className='font-bold'>Pavadinimas:</span> {item.title}</h2>
+            <p ><span className='font-bold '>Aprasymas: </span> {item.description}</p>
+            <p><span className='font-bold'>Kaina: </span>{item.price}</p>
             <p><span
               className='font-bold'>Įvertinimas:</span> {Math.round(item.average_rating * 100) / 100} ({item.rating_count})
             </p>
@@ -85,8 +83,8 @@ export default function ShopPage() {
                 />
               </div>
             )}
-            <p><span className='font-bold'>likutis: </span>{item.stock}</p>
-            <p><span className='font-bold'>kategorija:</span> {item.category_name}</p>
+            <p><span className='font-bold'>Likutis: </span>{item.stock}</p>
+            <p><span className='font-bold'>Kategorija:</span> {item.category_name}</p>
             {
               isUserLoggedIn ? item.stock > 0 ?
                 <BuyItemButton
