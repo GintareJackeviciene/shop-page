@@ -35,6 +35,7 @@ td {
  max-width: 400px;
  margin: 0 auto;
  padding: 20px;
+ margin-top: 40px;
 }
 .input-field {
   width: 100%;
@@ -49,4 +50,12 @@ td {
   max-width: 500px;
   margin: 0 auto;
   padding: 20px;
+  margin-top: 80px;
+}
+.img1{
+ margin-top: -50px;
+ 
+}
+.img2{
+  position: absolute;
 }

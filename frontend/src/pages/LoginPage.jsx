@@ -31,7 +31,7 @@ export default function LoginPage() {
             .then((response) => {
                 login(data.email, response.data.token);
                 navigate('/shop', { replace: true });
-                toast.success(response.data?.message );
+                // toast.success(response.data?.message );
             })
             .catch((error) => {
                 toast.error(error.response.data.error);
@@ -39,7 +39,11 @@ export default function LoginPage() {
     }
 
     return (
-        <div style={{ marginTop: '50px' }} className='container  bg-gray-100 login'>
+        <>
+       
+       
+        <div  className='container  bg-gray-100 login'>
+            
             <h1 className='text-3xl text-center mt-10'>Prisijungimas</h1>
 
             <form onSubmit={formik.handleSubmit} className='flex flex-col items-center' noValidate>
@@ -74,5 +78,8 @@ export default function LoginPage() {
                 </div>
             </form>
         </div>
+        
+    
+        </>
     );
 }

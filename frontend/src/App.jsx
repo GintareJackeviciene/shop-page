@@ -18,6 +18,7 @@ import OrderListPage from './pages/Order/OrderListPage';
 import OrderDetailPage from './pages/Order/OrderDetailPage';
 import Kontaktai from './pages/Kontaktai';
 import Pagrindinis from './pages/Pagrindinis';
+import Kopecios from './pages/Item/kopecios';
 
 export default function App() {
     return (
@@ -30,7 +31,7 @@ export default function App() {
                 <Route path='/login' element={<LoginPage />} />
                 <Route path='/register' element={<RegisterPage />} />
                 <Route path='/kontaktai' element={<Kontaktai />} />
-
+                <Route path='/kopecios' element={<Kopecios/>} />
 
 
                 <Route path='/orders' element={
